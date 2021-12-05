@@ -2,7 +2,7 @@ export default function Movies(){
 
   return(
     <div>
-      <p>Movies</p> 
+      <p>Movies</p>
     </div>
   )
 }

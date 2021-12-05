@@ -4,18 +4,17 @@ import moviesApi from '../movies/moviesApi';
 
 
 export default function Homepage(){
-const [movies, setMovies] = useState('');
-const {pathname} = useLocation()
 
-useEffect(() => {
-  moviesApi().then(
-      data => {
-        setMovies(data.results);
-      }
-    )
-}, []);
+  const [movies, setMovies] = useState('');
+
+  useEffect(() => {
+    moviesApi().then(
+        data => {
+          setMovies(data.results);
+        }
+      )
+  }, []);
  
-
   return(
     <div>
       <ul>

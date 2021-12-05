@@ -1,9 +1,12 @@
 // import './App.css';
 import { Routes, Route, useLocation} from 'react-router-dom';
 import Navigation from './components/Navigation/Navigation';
-import Homepage from './components/pages/home/Homepage';
+import Homepage from './components/pages/homepage/Homepage';
 import Movies from './components/pages/movies/Movies';
 import MovieDetailsPage from './components/pages/movieDetails/MovieDetailsPage';
+import Review from './components/pages/movieDetails/Review';
+import Cast from './components/pages/movieDetails/Cast';
+
 
 
 function App() {
@@ -13,10 +16,13 @@ function App() {
   <div>
     <Navigation />
     <Routes>
-      <Route exact path="/" element={<Homepage />} />
+      <Route index path="/" element={<Homepage />} />
       <Route exact strict path="/movies" element={<Movies />} />
+      <Route exact path="/movies/:movieId" element={<MovieDetailsPage />}>
+        <Route path="cast" element={<Cast />}></Route>
+        <Route path="review" element={<Review />}></Route>
+      </Route>
       <Route path="*" component={NotFound} />
-      <Route exact path="movies/:movieId" element={<MovieDetailsPage />} />
     </Routes>
   </div>
   );
