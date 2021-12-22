@@ -1,0 +1,9 @@
+.profilePhoto {
+    display: block;
+    width: 50px;
+}
+
+.actorslist {
+    list-style: none;
+    list-style-type: none;
+}

@@ -1,6 +1,6 @@
-import { Link, useLocation} from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import moviesApi from '../movies/moviesApi';
+import FilmsList from '../movies/FilmsList';
 
 
 export default function Homepage(){
@@ -16,15 +16,12 @@ export default function Homepage(){
   }, []);
  
   return(
+    
+
     <div>
-      <ul>
-        {movies && movies.map((movie)=>(
-        <li key={movie.id}>
-          <Link to={`/movies/${movie.id}`}> 
-            {movie.title || movie.name} 
-          </Link>
-        </li>))}
-      </ul>
+     <FilmsList 
+        movies={movies}
+      />
     </div>
   )
 }
