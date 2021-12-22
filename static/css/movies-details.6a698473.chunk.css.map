@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/pages/movieDetails/movieDetails/MovieDetails.module.css"],"names":[],"mappings":"AAAA,gCACI,WAAY,CACZ,eAAgB,CAChB,kBAEJ","file":"movies-details.6a698473.chunk.css","sourcesContent":[".backBatton {\n    padding: 5px;\n    margin-top: 15px;\n    margin-bottom: 15px;\n\n}"]}

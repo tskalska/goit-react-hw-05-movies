@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/pages/movies/movies/Movies.module.css"],"names":[],"mappings":"AAAA,0BACI,kBAAmB,CACnB,eACJ","file":"movies.94699fd8.chunk.css","sourcesContent":[".searchForm {\n    margin-bottom: 10px;\n    margin-top: 10px;\n}"]}
