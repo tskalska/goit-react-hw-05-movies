@@ -23,4 +23,6 @@ export function fetchReview(movieId) {
   return moviesApi(`${BASE_URL}/movie/${movieId}/reviews?api_key=0840ee49b4e805937e2935e9747ee2d4&language=en-US&page=1`);
 }
   
-  
+export function fetchMoviesByTitle(inputValue) {
+  return moviesApi(`${BASE_URL}/search/movie/?api_key=0840ee49b4e805937e2935e9747ee2d4&language=en-US&page=1&include_adult=false&query=${inputValue}`);
+}

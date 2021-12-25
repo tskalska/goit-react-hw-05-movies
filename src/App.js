@@ -18,7 +18,7 @@ function App() {
     <Navigation />
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
-        <Route index path="/goit-react-hw-05-movies" element={ <Homepage />} />
+        <Route index path="/goit-react-hw-05-movies/" element={ <Homepage />} />
         <Route exact strict path="/movies" element={<Movies />} />
         <Route exact path="/movies/:movieId" element={<MovieDetailsPage />}>
           <Route path="cast" element={<Cast />}></Route>

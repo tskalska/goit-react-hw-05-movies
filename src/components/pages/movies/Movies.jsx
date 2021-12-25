@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import MoviesList from './MoviesList';
 import styles from './Movies.module.css';
+import { fetchMoviesByTitle } from '../../../mowiesApi'
 
 
 export default function Movies(props){
@@ -14,9 +15,8 @@ export default function Movies(props){
     }
 
     const onSubmit = (inputValue) => {
-
-      return fetch(`https://api.themoviedb.org/3/search/movie/?api_key=0840ee49b4e805937e2935e9747ee2d4&language=en-US&page=1&include_adult=false&query=${inputValue}`)
-      .then(responce=>responce.json())
+      
+      fetchMoviesByTitle(inputValue)
       .then(data=>setFilmsList(data.results))
     }
 
