@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import FilmsList from '../FilmsList';
+import MoviesList from './MoviesList';
 import styles from './Movies.module.css';
 
 
@@ -48,7 +48,7 @@ export default function Movies(props){
             >
             </input>
           </form>
-          <FilmsList
+          <MoviesList
            movies={filmsList}
           />
         </header>

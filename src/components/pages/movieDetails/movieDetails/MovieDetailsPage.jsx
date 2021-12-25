@@ -1,6 +1,7 @@
 import { useParams, Link, Outlet, useNavigate} from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import styles from './MovieDetails.module.css';
+import { fetchMovieDetails } from '../../../../mowiesApi';
 
 export default function   MovieDetails(){
 
@@ -9,8 +10,7 @@ export default function   MovieDetails(){
   const  navigate = useNavigate();
 
   useEffect(() => {
-    return fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=0840ee49b4e805937e2935e9747ee2d4&language=en-US`)
-      .then(responce=>responce.json())
+    fetchMovieDetails(movieId)
       .then(
       data => {
         setFilmData(data);
@@ -18,12 +18,10 @@ export default function   MovieDetails(){
     )
   }, [movieId]);
 
-
   const goBack = (event) => {
     event.preventDefault()
     navigate(-1)
   }
-
 
   return(
     <div>

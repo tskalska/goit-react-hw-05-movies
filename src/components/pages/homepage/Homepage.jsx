@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import moviesApi from '../movies/moviesApi';
-import FilmsList from '../movies/FilmsList';
+import MoviesList from '../movies/MoviesList';
+import { fetchPopularMowies } from '../../../mowiesApi';
 
 
 export default function Homepage(){
@@ -8,18 +8,18 @@ export default function Homepage(){
   const [movies, setMovies] = useState('');
 
   useEffect(() => {
-    moviesApi().then(
-        data => {
-          setMovies(data.results);
-        }
-      )
+    fetchPopularMowies().then(
+          data => {
+            setMovies(data.results);
+          }
+        )
   }, []);
  
   return(
     
 
     <div>
-     <FilmsList 
+     <MoviesList 
         movies={movies}
       />
     </div>

@@ -1,5 +1,6 @@
 import { useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
+import { fetchReview } from '../../../../mowiesApi';
 
 
 export default function Cast(){
@@ -8,10 +9,9 @@ export default function Cast(){
   const {movieId} = useParams();
 
   useEffect(() => {
-    return fetch(`https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=0840ee49b4e805937e2935e9747ee2d4&language=en-US&page=1`)
-      .then(responce=>responce.json())
+    fetchReview(movieId)
       .then((data)=>{setReviews(data.results)})
-  }, [ ])
+  }, [movieId ])
 
   return(
     <div>

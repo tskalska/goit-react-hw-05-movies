@@ -1,6 +1,7 @@
 import { useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './Cast.module.css'
+import { fetchCast } from '../../../../mowiesApi';
 
 export default function Cast(){
   const [cast, setCrew] = useState('');
@@ -8,10 +9,9 @@ export default function Cast(){
   const {movieId} = useParams();
 
   useEffect(() => {
-    return fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=0840ee49b4e805937e2935e9747ee2d4&language=en-US`)
-      .then(responce=>responce.json())
+    fetchCast(movieId)
       .then((data)=>{setCrew(data.cast)})
-  }, [ ])
+  }, [ movieId ])
 
   return(
     <div>
