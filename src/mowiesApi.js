@@ -24,5 +24,5 @@ export function fetchReview(movieId) {
 }
   
 export function fetchMoviesByTitle(inputValue) {
-  return moviesApi(`${BASE_URL}/npsearch/movie/?api_key=0840ee49b4e805937e2935e9747ee2d4&language=en-US&page=1&include_adult=false&query=${inputValue}`);
+  return moviesApi(`${BASE_URL}/search/movie/?api_key=0840ee49b4e805937e2935e9747ee2d4&language=en-US&page=1&include_adult=false&query=${inputValue}`);
 }
